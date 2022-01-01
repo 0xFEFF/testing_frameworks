@@ -8,7 +8,7 @@ def test_dictionary_keys_format(dictionary):
 
 def test_dictionary_keys_exist(dictionary, key_list):
     dict_keys = dictionary.keys()
-    assert key_list[1] in dict_keys
+    assert key_list in dict_keys
 
 
 if __name__ == "__main__":

@@ -19,6 +19,7 @@ class TestDictionarys(unittest.TestCase):
     dictionary = {"Correct":1, " Wrong":2, " No match":4, "This matchs":3}
     keylist = ["Correct", "This matchs", "Non existing"]
 
+    # check if the keys have the right format
     def test_key_format(self):
         for key in self.dictionary.keys():
 
@@ -26,6 +27,7 @@ class TestDictionarys(unittest.TestCase):
 
                 self.assertRegex(key, '^[^\s]+[a-zA-Z0-9]+')
 
+    # check if the need keys for the specific modules are appended
     def test_key_existing(self):
         dict_keys =  self.dictionary.keys()
 

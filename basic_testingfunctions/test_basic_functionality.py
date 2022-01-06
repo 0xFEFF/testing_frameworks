@@ -1,6 +1,15 @@
+import pytest
 import re
 
 KEY_PATTERN = "[a-zA-Z0-9]"
+
+@pytest.fixture
+def dictionary():
+    return {" wrong key": "wrong", "right key": "right"}
+
+@pytest.fixture
+def key_list():
+    return ["right key", "blabla"]
 
 def test_dictionary_keys_format(dictionary):
     for key, value in dictionary.items():

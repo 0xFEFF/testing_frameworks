@@ -3,11 +3,33 @@
 # test fixture
 """
 A test fixture represents the preparation needed to perform one or more tests, and any associated cleanup actions. This may involve, for example, creating temporary or proxy databases, directories, or starting a server process.
+
+@
 """
 
 # test case
 """
 A test case is the individual unit of testing. It checks for a specific response to a particular set of inputs. unittest provides a base class, TestCase, which may be used to create new test cases.
+
+subclass from unittest2.TestCase 
+
+methods start with test
+
+need to use assert*() provided by TestCase
+
+setUp(self) wird vor jeder Ausführung ausgeführt
+tearDown(self)
+
+@unittest.skip("demonstrating skipping")
+@unittest.skipIf(mylib.__version__ < (1,3), "not supported")
+@unittest2.skipUnless(sys.platform.startswith("win"), "requires windows")
+@unittest.expectedFailure
+
+@unittest.skip() can also be used for classes
+
+
+subTest() used for multiple Tests
+
 """
 
 # test suite
@@ -22,7 +44,7 @@ A test runner is a component which orchestrates the execution of tests and provi
 
 # Basic Example
 
-import unittest
+import unittest2
 
 """class TestStringMethods(unittest.TestCase):
     def test_upper(self):
@@ -100,7 +122,7 @@ class WidgetTestCase(unittest.TestCase):
 # distinguishing test iterations using subtests
 # subTest() context manager is used
 
-class NumbersTest(unittest.TestCase):
+class NumbersTest(unittest2.TestCase):
 
     def test_even(self):
         # Test that numbers between 0 and 5 are all even.

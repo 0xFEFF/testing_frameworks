@@ -1,6 +1,7 @@
-import unittest
+import unittest2
+import nose2
 
-class TestStringMethods(unittest.TestCase):
+class TestStringMethods(unittest2.TestCase):
     def test_upper(self):
         self.assertEqual('foo'.upper(), 'FOO')
 
@@ -15,7 +16,7 @@ class TestStringMethods(unittest.TestCase):
         with self.assertRaises(TypeError):
             s.split(2)
 
-class TestDictionarys(unittest.TestCase):
+class TestDictionarys(unittest2.TestCase):
     dictionary = {"Correct":1, " Wrong":2, " No match":4, "This matchs":3}
     keylist = ["Correct", "This matchs", "Non existing"]
 
@@ -37,4 +38,4 @@ class TestDictionarys(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest2.main()
